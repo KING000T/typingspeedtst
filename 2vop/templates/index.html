@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="theme-dark">
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Typing Speed Test</h1>
+            <div class="settings">
+                <div class="setting-group">
+                    <label for="time-select">Time</label>
+                    <select id="time-select" class="select">
+                        <option value="30">30s</option>
+                        <option value="60">60s</option>
+                        <option value="120">120s</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label for="difficulty-select">Difficulty</label>
+                    <select id="difficulty-select" class="select">
+                        <option value="easy">Easy</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label for="theme-select">Theme</label>
+                    <select id="theme-select" class="select">
+                        <option value="dark">Dark</option>
+                        <option value="light">Light</option>
+                        <option value="neon">Neon</option>
+                        <option value="pastel">Pastel</option>
+                        <option value="minimal">Minimal</option>
+                        <option value="ocean">Ocean</option>
+                        <option value="retro">Retro</option>
+                        <option value="cyberpunk">Cyberpunk</option>
+                        <option value="yellow">yellow</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="test-area">
+                <div id="quote-display" class="quote-display" aria-live="polite"></div>
+                <div id="caret" class="caret"></div>
+                <textarea id="typing-area" class="typing-area" rows="3" placeholder="Start typing..." spellcheck="false" aria-label="Typing input"></textarea>
+            </div>
+            <div id="timer" class="timer">0:00</div>
+            <button id="start-btn" class="btn start-btn">Start</button>
+            <div id="stats" class="stats">
+                <div class="stat">WPM: <span id="wpm">0</span></div>
+                <div class="stat">Accuracy: <span id="accuracy">0%</span></div>
+                <div class="stat">Errors: <span id="errors">0</span></div>
+            </div>
+        </main>
+        <footer class="footer">
+            <!-- Custom quote section removed -->
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
